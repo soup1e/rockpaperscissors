@@ -42,18 +42,19 @@
                 </ul>
             </section>
 
-            <h3>Choose One!</h3>
-
             <section class="shoots">
-                <button class="shoot" id="rock-shoot">
-                    <img src="assets\rock.jpg" alt="rock" />
-                </button>
-                <button class="shoot" id="paper-shoot">
-                    <img src="assets\paper.jpg" alt="paper" />
-                </button>
-                <button class="shoot" id="scissors-shoot">
-                    <img src="assets\scissors.jpg" alt="scissor" />
-                </button>
+                <div id="choose">
+                    <h3>Choose One!</h3>
+                    <button class="shoot" id="rock-shoot">
+                        <img src="assets\rock.jpg" alt="rock" />
+                    </button>
+                    <button class="shoot" id="paper-shoot">
+                        <img src="assets\paper.jpg" alt="paper" />
+                    </button>
+                    <button class="shoot" id="scissors-shoot">
+                        <img src="assets\scissors.jpg" alt="scissor" />
+                    </button>
+                </div>
             </section>
 
             <div id="results" class="hidden">
@@ -63,7 +64,11 @@
                         <h4>You</h4>
 
                         <div class="shoot">
-                            <img id="player" src="" alt="what the player threw" />
+                            <img
+                                id="player"
+                                src="assets\scissors.jpg"
+                                alt="what the player threw"
+                            />
                         </div>
 
                         <div class="shoot">
@@ -74,7 +79,11 @@
                             <h4>Computer</h4>
 
                             <div class="shoot">
-                                <img id="computer" src="" alt="what the computer threw" />
+                                <img
+                                    id="computer"
+                                    src="assets\scissors.jpg"
+                                    alt="what the computer threw"
+                                />
                             </div>
                         </div>
 
