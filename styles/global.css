@@ -35,3 +35,8 @@ main {
 .hidden {
     visibility: hidden;
 }
+
+#scoreboard li {
+    display: inline;
+    padding: 100px;
+}
