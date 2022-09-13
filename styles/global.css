@@ -23,3 +23,15 @@ header {
 main {
     padding: 20px;
 }
+
+.shoot img {
+    object-fit: scale-down;
+    height: 10vh;
+    width: 10vw;
+    background-size: cover;
+    background-color: white;
+}
+
+.hidden {
+    visibility: hidden;
+}
