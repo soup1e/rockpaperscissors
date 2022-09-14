@@ -1,3 +1,3 @@
 ## PLANNING BOARD!!!
 
-! [rps](assets\rps.PNG)
+! [rps](assets\rpg.PNG)
