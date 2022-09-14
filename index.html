@@ -65,7 +65,7 @@
 
                         <div class="shoot">
                             <img
-                                id="player"
+                                id="player-shoot"
                                 src="assets\scissors.jpg"
                                 alt="what the player threw"
                             />
@@ -80,14 +80,16 @@
 
                             <div class="shoot">
                                 <img
-                                    id="computer"
+                                    id="computer-shoot"
                                     src="assets\scissors.jpg"
                                     alt="what the computer threw"
                                 />
                             </div>
                         </div>
 
-                        <h3 class="playerresult">YOU WIN!</h3>
+                        <h3 id="playerLose" class="hidden">YOU LOSE!</h3>
+                        <h3 id="playerWin" class="hidden">YOU WIN!</h3>
+                        <h3 id="playerTie" class="hidden">YOU WIN!</h3>
                         <button id="play-again-button">Play Again</button>
                     </div>
                 </section>
