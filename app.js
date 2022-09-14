@@ -10,13 +10,17 @@ function randomShoots(array) {
     return item;
 }
 /* State */
+let gameState = 'Input';
+
 let total = '0';
 let wins = '0';
+let ties = '0';
 let losses = '0';
 
 /* Actions */
 function loadPage() {
     displayScoreboard();
+    displayResults();
 }
 /* Component */
 const results = document.getElementById('results');
@@ -27,6 +31,7 @@ const playerShootImage = document.getElementById('player-shoot');
 
 function runGame(player) {
     const computerShoot = randomShoots(shoots);
+    gameState = 'results';
 
     console.log(computerShoot, 'computers throw');
     console.log(player, 'players throw');
@@ -69,11 +74,18 @@ function runGame(player) {
     console.log(result);
     if (result === 'player') {
         playerWin.classList.remove('hidden');
+        wins++;
+        total++;
     } else if (result === 'computer') {
         playerLose.classList.remove('hidden');
+        losses++;
+        total++;
     } else if (result === 'tie') {
         playerTie.classList.remove('hidden');
+        ties++;
+        total++;
     }
+    loadPage();
 }
 
 // get DOM
@@ -85,11 +97,13 @@ const scissorsShoot = document.getElementById('scissors-shoot');
 const totalDisplay = document.getElementById('total-display');
 const winsDisplay = document.getElementById('wins-display');
 const lossesDisplay = document.getElementById('losses-display');
+const tiesDisplay = document.getElementById('ties-display');
 
 function displayScoreboard() {
     totalDisplay.textContent = total;
     winsDisplay.textContent = wins;
     lossesDisplay.textContent = losses;
+    tiesDisplay.textContent = ties;
 }
 
 // event listeners
@@ -106,5 +120,27 @@ scissorsShoot.addEventListener('click', () => {
     runGame('scissors');
 });
 
+function displayResults() {
+    if (gameState === 'results') {
+        results.classList.remove('hidden');
+        choose.classList.add('hidden');
+    } else {
+        results.classList.add('hidden');
+        playerLose.classList.add('hidden');
+        playerWin.classList.add('hidden');
+        playerTie.classList.add('hidden');
+        choose.classList.remove('hidden');
+    }
+}
+
+const playAgainButton = document.getElementById('play-again-button');
+
+playAgainButton.addEventListener('click', () => {
+    playAgain();
+});
+function playAgain() {
+    gameState = 'Input';
+    loadPage();
+}
 /* Run page load code */
 loadPage();
