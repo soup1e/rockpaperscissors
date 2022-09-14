@@ -33,9 +33,6 @@ function runGame(player) {
     const computerShoot = randomShoots(shoots);
     gameState = 'results';
 
-    console.log(computerShoot, 'computers throw');
-    console.log(player, 'players throw');
-
     results.classList.remove('hidden'); // shows results
 
     playerShootImage.src = `assets/${player}.jpg`; // CHANGES PLAYER IMG
@@ -71,7 +68,7 @@ function runGame(player) {
     const playerLose = document.getElementById('playerLose');
     const playerWin = document.getElementById('playerWin');
     const playerTie = document.getElementById('playerTie');
-    console.log(result);
+
     if (result === 'player') {
         playerWin.classList.remove('hidden');
         wins++;
@@ -98,6 +95,11 @@ const totalDisplay = document.getElementById('total-display');
 const winsDisplay = document.getElementById('wins-display');
 const lossesDisplay = document.getElementById('losses-display');
 const tiesDisplay = document.getElementById('ties-display');
+
+const choose = document.getElementById('choose');
+const playerLose = document.getElementById('playerLose');
+const playerWin = document.getElementById('playerWin');
+const playerTie = document.getElementById('playerTie');
 
 function displayScoreboard() {
     totalDisplay.textContent = total;
