@@ -1,40 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <!-- metadata -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <!-- title and favicon -->
+        <title>Web App</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
-    <!-- title and favicon -->
-    <title>Web App</title>
-    <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+        <!-- js -->
+        <script type="module" src="app.js"></script>
 
-    <!-- js -->
-    <script type="module" src="app.js"></script>
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap">
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+    </head>
 
-    <!-- css -->
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/global.css" />
-</head>
+    <body>
+        <header>
+            <img src="assets\rps.gif" />
+            <h1>Rock, Paper, Scissors!</h1>
+        </header>
 
-<body>
-    <header>
-        <img src="/assets/html_css_js.png">
-        <h1>Web App</h1>
-    </header>
+        <main>
+            <section id="scoreboard">
+                <h3>Scoreboard</h3>
+                <ul class="scores">
+                    <li>Wins: <span id="wins-display">1</span></li>
+                    <li>Losses: <span id="losses-display">0</span></li>
+                    <li>Ties: <span id="ties-display">0</span></li>
+                    <li>Totals: <span id="total-display">0</span></li>
+                </ul>
+            </section>
 
-    <main>
+            <section class="shoots">
+                <div id="choose">
+                    <h3>Choose One!</h3>
+                    <button class="shoot" id="rock-shoot">
+                        <img src="assets\rock.jpg" alt="rock" />
+                    </button>
+                    <button class="shoot" id="paper-shoot">
+                        <img src="assets\paper.jpg" alt="paper" />
+                    </button>
+                    <button class="shoot" id="scissors-shoot">
+                        <img src="assets\scissors.jpg" alt="scissor" />
+                    </button>
+                </div>
+            </section>
 
-    </main>
+            <div id="results" class="hidden">
+                <h3>Results:</h3>
+                <section class="shoots">
+                    <div class="shoot">
+                        <h4>You</h4>
 
-</body>
+                        <div class="shoot">
+                            <img
+                                id="player-shoot"
+                                src="assets\scissors.jpg"
+                                alt="what the player threw"
+                            />
+                        </div>
 
+                        <div class="shoot">
+                            <h4>V.S.</h4>
+                        </div>
+
+                        <div class="shoot">
+                            <h4>Computer</h4>
+
+                            <div class="shoot">
+                                <img
+                                    id="computer-shoot"
+                                    src="assets\scissors.jpg"
+                                    alt="what the computer threw"
+                                />
+                            </div>
+                        </div>
+                        <h3 id="playerWin" class="hidden">YOU WIN!</h3>
+                        <h3 id="playerLose" class="hidden">YOU LOSE!</h3>
+                        <h3 id="playerTie" class="hidden">YOU TIE!</h3>
+                        <button id="play-again-button">Play Again</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
 </html>
